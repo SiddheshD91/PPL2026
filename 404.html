@@ -1,16 +1,28 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Redirecting…</title>
-    <meta http-equiv="refresh" content="0; url=/PPL2026/" />
+    <link rel="icon" type="image/svg+xml" href="/PPL2026/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ppl.json</title>
     <script>
-      // For SPA routes on GitHub Pages: redirect all 404s to the base path
-      window.location.replace('/PPL2026/');
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
   </head>
   <body>
-    <p>Redirecting…</p>
+    <script>
+      // Redirect to index.html which loads the React app
+      window.location.replace('/PPL2026/index.html' + window.location.search + window.location.hash);
+    </script>
   </body>
 </html>
-
