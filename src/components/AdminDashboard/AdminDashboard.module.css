@@ -1,0 +1,508 @@
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 40px;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.logoutButton {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logoutButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.leftPanel,
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.searchResults {
+  margin-top: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playerCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.playerCard:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.playerThumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.playerInfo {
+  flex: 1;
+}
+
+.playerName {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.playerDetails {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.playerDetailCard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.playerDetailPhoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.playerDetailInfo {
+  flex: 1;
+}
+
+.playerDetailInfo h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.playerDetailInfo p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.playerDetailActions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.linkButton {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #f7f7f7;
+  color: #333;
+  font-weight: 600;
+}
+
+.primaryButton {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #667eea;
+  color: white;
+  font-weight: 700;
+  border: none;
+}
+
+.categoryForm {
+  display: flex;
+  gap: 12px;
+}
+
+.categoryInput {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.categoryInput:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.createButton {
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.createButton:hover {
+  background: #5568d3;
+}
+
+.categoriesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.categoryCard {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fafafa;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.categoryName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.categoryActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.playerCount {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.deleteCategoryButton {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.deleteCategoryButton:hover {
+  background: #c0392b;
+}
+
+.categoryPlayersList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.categoryPlayerItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.categoryPlayerThumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.categoryPlayerName {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+}
+
+.removePlayerButton {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.removePlayerButton:hover {
+  background: #c0392b;
+}
+
+.addPlayerSection {
+  margin-top: 12px;
+}
+
+.addPlayerButton {
+  width: 100%;
+  padding: 10px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.addPlayerButton:hover {
+  background: #5568d3;
+}
+
+.addPlayerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addPlayerSearch {
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.addPlayerSearch:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.addPlayerResults {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addPlayerOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.addPlayerOption:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.addPlayerThumbnail {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cancelAddButton {
+  padding: 8px;
+  background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancelAddButton:hover {
+  background: #7f8c8d;
+}
+
+.noPlayersInCategory,
+.noCategories,
+.noResults {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-style: italic;
+}
+
+.maxPlayersReached {
+  text-align: center;
+  color: #e74c3c;
+  padding: 12px;
+  background: #ffeaea;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.loadingPlayers {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.errorMessage,
+.successMessage {
+  margin: 20px auto;
+  max-width: 1400px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.errorMessage {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.successMessage {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 20px 12px;
+  }
+
+  .playerDetailCard {
+    flex-direction: column;
+  }
+
+  .playerDetailPhoto {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+  }
+}
+

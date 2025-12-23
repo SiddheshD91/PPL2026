@@ -1,0 +1,15 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Player photos
+    match /player-photos/{allPaths=**} {
+      // Public: Anyone can upload photos (for registration)
+      allow write: if request.resource.size < 5 * 1024 * 1024 // 5MB limit
+        && request.resource.contentType.matches('image/.*');
+      
+      // Public: Anyone can read photos
+      allow read: if true;
+    }
+  }
+}
+
