@@ -1,1 +1,15 @@
 /* Global app styles - most styling is done via CSS Modules */
+
+.created-by-badge {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: rgba(102, 126, 234, 0.92);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 9999;
+}

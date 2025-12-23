@@ -48,6 +48,9 @@ function App() {
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <div className="created-by-badge">
+        Built by Siddhesh Dhole
+      </div>
     </BrowserRouter>
   );
 }
