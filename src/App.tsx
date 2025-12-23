@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import PlayerRegistration from './components/PlayerRegistration/PlayerRegistration';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
@@ -8,9 +9,27 @@ import CategoryDetailPage from './components/CategoryDetailPage/CategoryDetailPa
 import PlayerEditPage from './components/PlayerEditPage/PlayerEditPage';
 import './App.css';
 
+// Handle GitHub Pages SPA routing
+function RedirectHandler() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    // Check if we're in the GitHub Pages SPA redirect format
+    if (location.search.includes('?/')) {
+      const path = location.search.replace('?/', '').replace(/~and~/g, '&').split('&')[0];
+      if (path && path !== location.pathname) {
+        window.history.replaceState(null, '', path);
+      }
+    }
+  }, [location]);
+  
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
+      <RedirectHandler />
       <Routes>
         <Route path="/" element={<PlayerRegistration />} />
         <Route path="/admin/login" element={<AdminLogin />} />
