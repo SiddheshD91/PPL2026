@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Cricket-League-Auction/', // set to your repo name for GitHub Pages
+  base: '/PPL2026/',
   resolve: {
     dedupe: ['react', 'react-dom'],
   },
