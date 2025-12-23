@@ -14,11 +14,15 @@ function RedirectHandler() {
   const location = useLocation();
   
   useEffect(() => {
-    // Check if we're in the GitHub Pages SPA redirect format
+    // Check if we're in the GitHub Pages SPA redirect format (?/path format)
     if (location.search.includes('?/')) {
       const path = location.search.replace('?/', '').replace(/~and~/g, '&').split('&')[0];
+      // Only redirect if path exists and is different from current pathname
       if (path && path !== location.pathname) {
-        window.history.replaceState(null, '', path);
+        // Preserve the base path
+        const basePath = '/PPL2026';
+        const fullPath = basePath + path;
+        window.history.replaceState(null, '', fullPath);
       }
     }
   }, [location]);
@@ -27,8 +31,13 @@ function RedirectHandler() {
 }
 
 function App() {
+  // Detect if we're on GitHub Pages (production) or local dev
+  const basename = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+    ? '/' 
+    : '/PPL2026';
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <RedirectHandler />
       <Routes>
         <Route path="/" element={<PlayerRegistration />} />
