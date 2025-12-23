@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import PlayerRegistration from './components/PlayerRegistration/PlayerRegistration';
 import AdminLogin from './components/AdminLogin/AdminLogin';
@@ -12,20 +12,23 @@ import './App.css';
 // Handle GitHub Pages SPA routing
 function RedirectHandler() {
   const location = useLocation();
+  const navigate = useNavigate();
   
   useEffect(() => {
     // Check if we're in the GitHub Pages SPA redirect format (?/path format)
+    // This happens when 404.html redirects a missing route to index.html
     if (location.search.includes('?/')) {
       const path = location.search.replace('?/', '').replace(/~and~/g, '&').split('&')[0];
+      // Remove leading slash if present (React Router handles it)
+      const cleanPath = path.startsWith('/') ? path : '/' + path;
+      
       // Only redirect if path exists and is different from current pathname
-      if (path && path !== location.pathname) {
-        // Preserve the base path
-        const basePath = '/PPL2026';
-        const fullPath = basePath + path;
-        window.history.replaceState(null, '', fullPath);
+      if (cleanPath && cleanPath !== location.pathname) {
+        // Use React Router's navigate to properly handle basename
+        navigate(cleanPath, { replace: true });
       }
     }
-  }, [location]);
+  }, [location, navigate]);
   
   return null;
 }
